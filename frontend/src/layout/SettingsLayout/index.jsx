@@ -52,18 +52,6 @@ export default function SettingsLayout({
               </Row>
             </div>
           </Col>
-          <Col
-            className="gutter-row"
-            xs={{ span: 24 }}
-            sm={{ span: 24 }}
-            md={{ span: 7 }}
-            lg={{ span: 6 }}
-          >
-            <TopCard title={topCardTitle} cardContent={topCardContent} />
-            <div className="whiteBox shadow" style={{ minHeight: '280px' }}>
-              <Row gutter={[0, 0]}>{bottomCardContent}</Row>
-            </div>
-          </Col>
         </Row>
       </Content>
     </Layout>

@@ -3,6 +3,8 @@ import { API_BASE_URL } from '@/config/serverApiConfig';
 
 import errorHandler from './errorHandler';
 import successHandler from './successHandler';
+// Import words.json file
+import profanityWords from '@/words.json';
 
 axios.defaults.baseURL = API_BASE_URL;
 axios.defaults.withCredentials = true;
@@ -114,6 +116,20 @@ const request = {
         notifyOnSuccess: false,
         notifyOnFailed: false,
       });
+      // Remove the item from response.data by checking with from the list of profanity words and return the response.data
+      // Add a condition to check if response data is null and conatcins result only then do the profanity check
+      if (response.data && response.data.result) {
+        response.data.result = response.data.result.filter((item) => {
+          let isProfanity = false;
+          profanityWords.forEach((word) => {
+            if (item.name?.toLowerCase().includes(word)) {
+              isProfanity = true;
+            }
+          });
+          return !isProfanity;
+        });
+      }
+
       return response.data;
     } catch (error) {
       return errorHandler(error);

@@ -16,15 +16,15 @@ export default function Role() {
   const entityDisplayLabels = ['displayName'];
 
   const readColumns = [
-    { title: 'codeName', dataIndex: 'codeName' },
-    { title: 'displayName', dataIndex: 'displayName' },
-    { title: 'dashboardType', dataIndex: 'dashboardType' },
+    { title: 'Code Name', dataIndex: 'codeName' },
+    { title: 'Display Name', dataIndex: 'displayName' },
+    { title: 'Dashboard Type', dataIndex: 'dashboardType' },
   ];
 
   const dataTableColumns = [
-    { title: 'codeName', dataIndex: 'codeName' },
-    { title: 'displayName', dataIndex: 'displayName' },
-    { title: 'dashboardType', dataIndex: 'dashboardType' },
+    { title: 'Code Name', dataIndex: 'codeName' },
+    { title: 'Display Name', dataIndex: 'displayName' },
+    { title: 'Dashboard Type', dataIndex: 'dashboardType' },
   ];
   const ADD_NEW_ENTITY = 'Add new Role';
   const DATATABLE_TITLE = 'Roles List';

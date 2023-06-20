@@ -32,84 +32,22 @@ const SideContent = () => {
       <div style={{ width: '100%' }}>
         <img src={logo} alt="Logo" style={{ margin: '0 auto 40px', display: 'block' }} />
         <div className="space40"></div>
-        <Title level={3}>Manage your company with :</Title>
+        <Title level={3}>Manage your employees with :</Title>
         <div className="space20"></div>
         <ul className="list-checked">
           <li className="list-checked-item">
             <Space direction="vertical">
-              <Text strong>All-in-one tool</Text>
-
-              <Text>Build, run, and scale your apps - end to end</Text>
+              <Text strong>Employee Self Service tool</Text>
             </Space>
           </li>
 
           <li className="list-checked-item">
             <Space direction="vertical">
-              <Text strong>Easily add &amp; manage your services</Text>
+              <Text strong>Easily add &amp; manage your employee services</Text>
               <Text>It brings together your tasks, projects, timelines, files and more</Text>
             </Space>
           </li>
         </ul>
-        <Divider />
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <img
-            src={logo1}
-            alt="Logo1"
-            style={{
-              margin: '0 15px',
-              display: 'block',
-              float: 'left',
-              width: '48px',
-              filter: 'grayscale(1)',
-              mixBlendMode: 'multiply',
-              opacity: '0.8',
-            }}
-          />
-          <img
-            src={logo2}
-            alt="Logo2"
-            style={{
-              margin: '0 15px',
-              display: 'block',
-              float: 'left',
-              width: '48px',
-              filter: 'grayscale(1)',
-              mixBlendMode: 'multiply',
-              opacity: '0.8',
-            }}
-          />
-          <img
-            src={logo3}
-            alt="Logo3"
-            style={{
-              margin: '0 15px',
-              display: 'block',
-              float: 'left',
-              width: '48px',
-              filter: 'grayscale(1)',
-              mixBlendMode: 'multiply',
-              opacity: '0.8',
-            }}
-          />
-          <img
-            src={logo4}
-            alt="Logo4"
-            style={{
-              margin: '0 15px',
-              display: 'block',
-              float: 'left',
-              width: '48px',
-              filter: 'grayscale(1)',
-              mixBlendMode: 'multiply',
-              opacity: '0.8',
-            }}
-          />
-        </div>
       </div>
     </Content>
   );

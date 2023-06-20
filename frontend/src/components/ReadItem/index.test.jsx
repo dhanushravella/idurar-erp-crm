@@ -11,10 +11,10 @@ import FeedStoreMock from '@/test/mocksComponent/FeedStoreMock';
 import { crud } from '@/redux/crud/actions';
 
 const data = {
-  company: 'IDURAR',
-  managerSurname: 'Lalami ',
-  managerName: 'Salah Eddine',
-  email: 'idurardz@gmail.com',
+  company: 'HONO',
+  managerSurname: 'P R ',
+  managerName: 'Prasanth',
+  email: 'admin@demo.com',
   phone: '05541 144 700',
 };
 

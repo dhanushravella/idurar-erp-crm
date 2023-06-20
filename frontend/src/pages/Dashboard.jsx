@@ -109,18 +109,17 @@ export default function Dashboard() {
   const entity = 'invoice213';
   const dataTableColumns = [
     {
-      title: 'N#',
-      dataIndex: 'number',
-    },
-    {
-      title: 'Client',
+      title: 'Employee',
       dataIndex: ['client', 'company'],
     },
-
+    {
+      title: 'Hours',
+      dataIndex: 'hours',
+      render: (total) => `${12}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
+    },
     {
       title: 'Total',
       dataIndex: 'total',
-
       render: (total) => `$ ${total}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
     },
     {
@@ -128,7 +127,6 @@ export default function Dashboard() {
       dataIndex: 'status',
       render: (status) => {
         let color = status === 'Draft' ? 'volcano' : 'green';
-
         return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
     },
@@ -139,19 +137,19 @@ export default function Dashboard() {
     <DashboardLayout>
       <Row gutter={[24, 24]}>
         <TopCard
-          title={'Invoice'}
+          title={'Total Employees'}
           tagColor={'cyan'}
-          prefix={'This month'}
-          tagContent={'34 000 $'}
+          prefix={'Active as Today'}
+          tagContent={'3 000 '}
         />
         <TopCard
-          title={'Quote'}
+          title={'Expense'}
           tagColor={'purple'}
           prefix={'This month'}
           tagContent={'34 000 $'}
         />
         <TopCard
-          title={'Payment'}
+          title={'Accruals'}
           tagColor={'green'}
           prefix={'This month'}
           tagContent={'34 000 $'}
@@ -178,9 +176,10 @@ export default function Dashboard() {
                 className="gutter-row"
                 xs={{ span: 24 }}
                 sm={{ span: 24 }}
-                md={{ span: 8 }}
-                lg={{ span: 8 }}
+                md={{ span: 12 }}
+                lg={{ span: 12 }}
               >
+                {' '}
                 <div className="pad15">
                   <h3
                     style={{
@@ -188,7 +187,7 @@ export default function Dashboard() {
                       marginBottom: 15,
                     }}
                   >
-                    Invoice Preview
+                    Accruals Preview
                   </h3>
                   <PreviewState tag={'Draft'} color={'grey'} value={3} />
                   <PreviewState tag={'Pending'} color={'bleu'} value={5} />
@@ -202,8 +201,8 @@ export default function Dashboard() {
                 className="gutter-row"
                 xs={{ span: 24 }}
                 sm={{ span: 24 }}
-                md={{ span: 8 }}
-                lg={{ span: 8 }}
+                md={{ span: 12 }}
+                lg={{ span: 12 }}
               >
                 {' '}
                 <div className="pad15">
@@ -213,39 +212,14 @@ export default function Dashboard() {
                       marginBottom: 15,
                     }}
                   >
-                    Quote Preview
+                    Employees
                   </h3>
-                  <PreviewState tag={'Draft'} color={'grey'} value={3} />
-                  <PreviewState tag={'Pending'} color={'bleu'} value={5} />
-                  <PreviewState tag={'Not Paid'} color={'orange'} value={12} />
-                  <PreviewState tag={'Overdue'} color={'red'} value={6} />
-                  <PreviewState tag={'Partially Paid'} color={'cyan'} value={8} />
-                  <PreviewState tag={'Paid'} color={'green'} value={55} />
-                </div>
-              </Col>
-              <Col
-                className="gutter-row"
-                xs={{ span: 24 }}
-                sm={{ span: 24 }}
-                md={{ span: 8 }}
-                lg={{ span: 8 }}
-              >
-                {' '}
-                <div className="pad15">
-                  <h3
-                    style={{
-                      color: '#22075e',
-                      marginBottom: 15,
-                    }}
-                  >
-                    Offer Preview
-                  </h3>
-                  <PreviewState tag={'Draft'} color={'grey'} value={3} />
-                  <PreviewState tag={'Pending'} color={'bleu'} value={5} />
-                  <PreviewState tag={'Not Paid'} color={'orange'} value={12} />
-                  <PreviewState tag={'Overdue'} color={'red'} value={6} />
-                  <PreviewState tag={'Partially Paid'} color={'cyan'} value={8} />
-                  <PreviewState tag={'Paid'} color={'green'} value={55} />
+                  <PreviewState tag={'HR'} color={'grey'} value={3} />
+                  <PreviewState tag={'Marketing'} color={'bleu'} value={5} />
+                  <PreviewState tag={'Product'} color={'orange'} value={12} />
+                  <PreviewState tag={'Engineering'} color={'red'} value={6} />
+                  <PreviewState tag={'Sales'} color={'cyan'} value={8} />
+                  <PreviewState tag={'Support'} color={'green'} value={55} />
                 </div>
               </Col>
             </Row>
@@ -295,7 +269,7 @@ export default function Dashboard() {
         >
           <div className="whiteBox shadow">
             <div className="pad20">
-              <h3 style={{ color: '#22075e', marginBottom: 5 }}>Recent Invoices</h3>
+              <h3 style={{ color: '#22075e', marginBottom: 5 }}>Overtime Cost</h3>
             </div>
 
             <RecentTable entity={'invoice'} dataTableColumns={dataTableColumns} />
@@ -311,7 +285,7 @@ export default function Dashboard() {
         >
           <div className="whiteBox shadow">
             <div className="pad20">
-              <h3 style={{ color: '#22075e', marginBottom: 5 }}>Recent Quotes</h3>
+              <h3 style={{ color: '#22075e', marginBottom: 5 }}>Vacancies</h3>
             </div>
             <RecentTable entity={'quote'} dataTableColumns={dataTableColumns} />
           </div>

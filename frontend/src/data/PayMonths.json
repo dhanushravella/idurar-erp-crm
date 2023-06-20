@@ -1,0 +1,251 @@
+[
+  {
+    "title": "May 2023",
+    "active": true,
+    "payData": [
+      {
+        "title": "Earnings",
+        "value": "1,00,000",
+        "tagColor": "green",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Basic Pay",
+            "value": "50,000"
+          },
+          {
+            "title": "HRA",
+            "value": "30,000"
+          },
+          {
+            "title": "Compensatory Allowance",
+            "value": "10,000"
+          },
+          {
+            "title": "Education Allowance",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Deductions",
+        "value": "30,000",
+        "tagColor": "red",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Provident Fund",
+            "value": "10,000"
+          },
+          {
+            "title": "TDS",
+            "value": "10,000"
+          },
+          {
+            "title": "Club Deduction",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Arrears",
+        "value": "0",
+        "tagColor": "orange",
+        "prefix": "monthly",
+        "breakDown": []
+      }
+    ]
+  },
+  {
+    "title": "April 2023",
+    "payData": [
+      {
+        "title": "Earnings",
+        "value": "1,00,000",
+        "tagColor": "green",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Basic Pay",
+            "value": "50,000"
+          },
+          {
+            "title": "HRA",
+            "value": "20,000"
+          },
+          {
+            "title": "City Compensatory Allowance",
+            "value": "10,000"
+          },
+          {
+            "title": "Education Allowance",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Deductions",
+        "value": "90,000",
+        "tagColor": "red",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Provident Fund",
+            "value": "10,000"
+          },
+          {
+            "title": "TDS",
+            "value": "10,000"
+          },
+          {
+            "title": "Club Deduction",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Arrears",
+        "value": "0",
+        "tagColor": "orange",
+        "prefix": "monthly",
+        "breakDown": []
+      }
+    ]
+  },
+  {
+    "title": "March 2023",
+    "payData": [
+      {
+        "title": "Earnings",
+        "value": "90,000",
+        "tagColor": "green",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Basic Pay",
+            "value": "50,000"
+          },
+          {
+            "title": "HRA",
+            "value": "20,000"
+          },
+          {
+            "title": "City Compensatory Allowance",
+            "value": "10,000"
+          },
+          {
+            "title": "Education Allowance",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Deductions",
+        "value": "30,000",
+        "tagColor": "red",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Provident Fund",
+            "value": "10,000"
+          },
+          {
+            "title": "TDS",
+            "value": "10,000"
+          },
+          {
+            "title": "Club Deduction",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Arrears",
+        "value": "0",
+        "tagColor": "orange",
+        "prefix": "monthly",
+        "breakDown": []
+      },
+      {
+        "title": "Reimbursements",
+        "value": "10,000",
+        "tagColor": "green",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "School Fees Reimbursement",
+            "value": "10,000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "February 2023",
+    "payData": [
+      {
+        "title": "Earnings",
+        "value": "90,000",
+        "tagColor": "green",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Basic Pay",
+            "value": "50,000"
+          },
+          {
+            "title": "HRA",
+            "value": "20,000"
+          },
+          {
+            "title": "City Compensatory Allowance",
+            "value": "10,000"
+          },
+          {
+            "title": "Education Allowance",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Deductions",
+        "value": "30,000",
+        "tagColor": "red",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "Provident Fund",
+            "value": "10,000"
+          },
+          {
+            "title": "TDS",
+            "value": "10,000"
+          },
+          {
+            "title": "Club Deduction",
+            "value": "10,000"
+          }
+        ]
+      },
+      {
+        "title": "Arrears",
+        "value": "0",
+        "tagColor": "orange",
+        "prefix": "monthly",
+        "breakDown": []
+      },
+      {
+        "title": "Reimbursements",
+        "value": "10,000",
+        "tagColor": "green",
+        "prefix": "monthly",
+        "breakDown": [
+          {
+            "title": "School Fees Reimbursement",
+            "value": "10,000"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -7,15 +7,10 @@ import logoIcon from '@/style/images/logo-icon.png';
 import logoText from '@/style/images/logo-text.png';
 
 import {
-  DesktopOutlined,
   SettingOutlined,
-  CustomerServiceOutlined,
-  FileTextOutlined,
-  FileSyncOutlined,
   DashboardOutlined,
   TeamOutlined,
   UserOutlined,
-  CreditCardOutlined,
   BankOutlined,
 } from '@ant-design/icons';
 
@@ -62,7 +57,7 @@ export default function Navigation() {
             <Link to={'/'} />
             Dashboard
           </Menu.Item>
-          <Menu.Item key={'Customer'} icon={<CustomerServiceOutlined />}>
+          {/*<Menu.Item key={'Customer'} icon={<CustomerServiceOutlined />}>
             <Link to={'/customer'} />
             Customer
           </Menu.Item>
@@ -77,7 +72,7 @@ export default function Navigation() {
           <Menu.Item key={'PaymentInvoice'} icon={<CreditCardOutlined />}>
             <Link to={'/payment/invoice'} />
             Payment Invoice
-          </Menu.Item>
+          </Menu.Item>*/}
           <Menu.Item key={'Employee'} icon={<UserOutlined />}>
             <Link to={'/employee'} />
             Employee
@@ -86,14 +81,28 @@ export default function Navigation() {
             <Link to={'/admin'} />
             Admin
           </Menu.Item>
+          <SubMenu key={'Payroll'} icon={<BankOutlined />} title={'Payroll'}>
+            <Menu.Item key={'Manage Payroll'}>
+              <Link to={'/payroll'} />
+              Manage Payroll
+            </Menu.Item>
+            <Menu.Item key={'Authorize Payroll'}>
+              <Link to={'/payroll'} />
+              Authorize Payroll
+            </Menu.Item>
+            <Menu.Item key={'Manage Bank Details'}>
+              <Link to={'/payroll'} />
+              Manage Bank Details
+            </Menu.Item>
+            <Menu.Item key={'View Payslip'}>
+              <Link to={'/payroll'} />
+              View Payslip
+            </Menu.Item>
+          </SubMenu>
           <SubMenu key={'Settings'} icon={<SettingOutlined />} title={'Settings'}>
             <Menu.Item key={'SettingsPage'}>
               <Link to={'/settings'} />
               General Settings
-            </Menu.Item>
-            <Menu.Item key={'PaymentMode'}>
-              <Link to={'/payment/mode'} />
-              Payment Mode
             </Menu.Item>
             <Menu.Item key={'Role'}>
               <Link to={'/role'} />

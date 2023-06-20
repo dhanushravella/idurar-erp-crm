@@ -40,10 +40,10 @@ const ContentBox = ({ children }) => {
     <Content
       className="whiteBox shadow"
       style={{
-        padding: '50px 40px',
-        margin: '100px auto',
-        width: isSidePanelClose ? '100%' : '830px',
-        maxWidth: '1000px',
+        padding: '20px 40px',
+        margin: '75px auto',
+        width: isSidePanelClose ? '100%' : '80%',
+        //maxWidth: '1000px',
         flex: 'none',
       }}
     >
@@ -63,15 +63,15 @@ export default function CrudLayout({
     <>
       <DefaultLayout>
         <Layout style={{ minHeight: '100vh' }}>
+          <Layout>
+            <ContentBox> {children}</ContentBox>
+          </Layout>
           <SidePanel
             config={config}
             topContent={sidePanelTopContent}
             bottomContent={sidePanelBottomContent}
             fixHeaderPanel={fixHeaderPanel}
           ></SidePanel>
-          <Layout>
-            <ContentBox> {children}</ContentBox>
-          </Layout>
         </Layout>
       </DefaultLayout>
     </>

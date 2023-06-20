@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { Dropdown, Table } from 'antd';
-import { Button, PageHeader } from 'antd';
+import { Button } from 'antd';
+import { PageHeader } from '@ant-design/pro-layout';
 import { EllipsisOutlined } from '@ant-design/icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { erp } from '@/redux/erp/actions';

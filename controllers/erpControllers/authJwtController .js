@@ -60,6 +60,7 @@ exports.login = async (req, res) => {
       secure: true,
     });
 
+    console.log(result);
     res.json({
       success: true,
       result: {

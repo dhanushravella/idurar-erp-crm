@@ -1,0 +1,211 @@
+{
+  "Period": "May 2023",
+  "Company": "ABC Pvt Ltd",
+  "Employee": "John Doe",
+  "EmployeeId": "123456",
+  "Designation": "Software Engineer",
+  "Department": "Engineering",
+  "Bank": "HDFC Bank",
+  "AccountNumber": "1234567890",
+  "IFSC": "HDFC0001234",
+  "PAN": "ABCDE1234F",
+  "UAN": "123456789012",
+  "PFNumber": "1234567890",
+  "Location": "Mumbai",
+  "Gender": "Male",
+  "DateOfBirth": "01/01/1990",
+  "DateOfJoining": "01/01/2020",
+  "MonthDays": 31,
+  "WorkingDays": 23,
+  "ArrearDays": 0,
+  "ESINumber": "12345678901234567",
+  "payData": [
+    {
+      "title": "Basic Pay",
+      "value": "50,000",
+      "tagColor": "green",
+      "prefix": "Earnings",
+      "breakDown": [
+        {
+          "title": "Outlier",
+          "value": "NO"
+        },
+        {
+          "title": "Apr 2023",
+          "value": "50,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "50,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "47,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "50,000"
+        }
+      ]
+    },
+    {
+      "title": "HRA",
+      "value": "30,000",
+      "tagColor": "green",
+      "prefix": "Earnings",
+      "breakDown": [
+        {
+          "title": "Outlier",
+          "value": "NO"
+        },
+        {
+          "title": "Apr 2023",
+          "value": "30,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "30,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "27,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "30,000"
+        },
+        {
+          "title": "Calculation",
+          "value": "(30% * Basic Pay)"
+        }
+      ]
+    },
+    {
+      "title": "Compensatory Allowance",
+      "value": "10,000",
+      "tagColor": "green",
+      "prefix": "Earnings",
+      "breakDown": [
+        {
+          "title": "Apr 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "10,000"
+        }
+      ]
+    },
+    {
+      "title": "Education Allowance",
+      "value": "10,000",
+      "tagColor": "green",
+      "prefix": "Earnings",
+      "breakDown": [
+        {
+          "title": "Apr 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "17,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "10,000"
+        }
+      ]
+    },
+    {
+      "title": "TDS",
+      "value": "10,000",
+      "tagColor": "red",
+      "prefix": "Deductions",
+      "breakDown": [
+        {
+          "title": "Apr 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "17,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "10,000"
+        }
+      ]
+    },
+    {
+      "title": "PF Employee Contribution",
+      "value": "10,000",
+      "tagColor": "red",
+      "prefix": "Deductions",
+      "breakDown": [
+        {
+          "title": "Apr 2023",
+          "value": "12,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "15,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "12,000"
+        }
+      ]
+    },
+    {
+      "title": "Club Deduction",
+      "value": "10,000",
+      "tagColor": "red",
+      "prefix": "Deductions",
+      "breakDown": [
+        {
+          "title": "Apr 2023",
+          "value": "8,000"
+        },
+        {
+          "title": "Mar 2023",
+          "value": "10,000"
+        },
+        {
+          "title": "Feb 2023",
+          "value": "12,000"
+        },
+        {
+          "title": "Jan 2023",
+          "value": "15,000"
+        }
+      ]
+    },
+    {
+      "title": "",
+      "value": "",
+      "tagColor": "red",
+      "prefix": "Arrears",
+      "breakDown": []
+    }
+  ]
+}

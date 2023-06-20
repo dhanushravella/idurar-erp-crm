@@ -3,15 +3,9 @@ import { Menu, Tabs, Button, Divider } from 'antd';
 import { SettingsLayout } from '@/layout';
 
 import GeneralSettings from './GeneralSettings';
-import PaymentSettings from './PaymentSettings';
-import InvoiceSettings from './InvoiceSettings';
 
 const RightMenu = ({ activeTab, handleTabChange }) => {
-  const menuItems = [
-    { key: 'generalSettings', label: 'generalSettings' },
-    { key: 'paymentSettings', label: 'paymentSettings' },
-    { key: 'invoiceSettings', label: 'invoiceSettings' },
-  ];
+  const menuItems = [{ key: 'generalSettings', label: 'General Settings' }];
   const menuList = menuItems.map((item, index) => (
     <Button
       type={item.key == activeTab ? 'default' : 'text'}
@@ -50,12 +44,6 @@ export default function Settings() {
     >
       <Visibility isVisible={isActive('generalSettings')}>
         <GeneralSettings />
-      </Visibility>
-      <Visibility isVisible={isActive('paymentSettings')}>
-        <PaymentSettings />
-      </Visibility>
-      <Visibility isVisible={isActive('invoiceSettings')}>
-        <InvoiceSettings />
       </Visibility>
     </SettingsLayout>
   );

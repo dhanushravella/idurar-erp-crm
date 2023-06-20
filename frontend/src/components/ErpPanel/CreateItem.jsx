@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Divider } from 'antd';
 
-import { Button, PageHeader, Row, Statistic, Tag } from 'antd';
+import { Button, Row, Statistic, Tag } from 'antd';
+import { PageHeader } from '@ant-design/pro-layout';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { erp } from '@/redux/erp/actions';

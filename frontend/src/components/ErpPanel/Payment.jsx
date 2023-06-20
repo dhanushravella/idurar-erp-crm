@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Divider } from 'antd';
 
-import { Button, PageHeader, Row, Col, Descriptions, Tag } from 'antd';
+import { Button, Row, Col, Descriptions, Tag } from 'antd';
+import { PageHeader } from '@ant-design/pro-layout';
 import { FileTextOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 import { useSelector, useDispatch } from 'react-redux';

@@ -12,7 +12,7 @@ export default function DashboardLayout({ children }) {
           padding: '30px 40px',
           margin: '70px auto',
           width: '100%',
-          maxWidth: '1100px',
+          //maxWidth: '1100px',
         }}
       >
         {children}

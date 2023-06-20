@@ -10,12 +10,12 @@ export default function Employee() {
     searchFields: 'name,surname,birthday',
     outputValue: '_id',
   };
-
+  const dataTableTitle = 'Employee Lists';
   const entityDisplayLabels = ['name', 'surname'];
 
   const dataTableColumns = [
     {
-      title: 'name',
+      title: 'Name',
       dataIndex: 'name',
     },
     {
@@ -23,33 +23,33 @@ export default function Employee() {
       dataIndex: 'surname',
     },
     {
-      title: 'birthday',
+      title: 'Birthday',
       dataIndex: 'birthday',
       render: (date) => {
         return dayjs(date).format('DD/MM/YYYY');
       },
     },
     {
-      title: 'department',
+      title: 'Department',
       dataIndex: 'department',
     },
     {
-      title: 'position',
+      title: 'Position',
       dataIndex: 'position',
     },
     {
-      title: 'phone',
+      title: 'Phone',
       dataIndex: 'phone',
     },
     {
-      title: 'email',
+      title: 'Email',
       dataIndex: 'email',
     },
   ];
 
   const readColumns = [
     {
-      title: 'name',
+      title: 'Name',
       dataIndex: 'name',
     },
     {
@@ -57,46 +57,46 @@ export default function Employee() {
       dataIndex: 'surname',
     },
     {
-      title: 'birthday',
+      title: 'Birthday',
       dataIndex: 'birthday',
       isDate: true,
     },
     {
-      title: 'birthplace',
+      title: 'Birth Place',
       dataIndex: 'birthplace',
     },
     {
-      title: 'gender',
+      title: 'Gender',
       dataIndex: 'gender',
     },
     {
-      title: 'department',
+      title: 'Department',
       dataIndex: 'department',
     },
     {
-      title: 'position',
+      title: 'Position',
       dataIndex: 'position',
     },
     {
-      title: 'address',
+      title: 'Address',
       dataIndex: 'address',
     },
     {
-      title: 'state',
+      title: 'State',
       dataIndex: 'state',
     },
     {
-      title: 'phone',
+      title: 'Phone',
       dataIndex: 'phone',
     },
     {
-      title: 'email',
+      title: 'Email',
       dataIndex: 'email',
     },
   ];
 
   const ADD_NEW_ENTITY = 'Add new employee';
-  const DATATABLE_TITLE = 'employees List';
+  const DATATABLE_TITLE = 'Employees List';
   const ENTITY_NAME = 'employee';
   const CREATE_ENTITY = 'Create employee';
   const UPDATE_ENTITY = 'Update employee';
@@ -110,6 +110,7 @@ export default function Employee() {
     ADD_NEW_ENTITY,
     UPDATE_ENTITY,
     DATATABLE_TITLE,
+    dataTableTitle,
     readColumns,
     dataTableColumns,
     searchConfig,
