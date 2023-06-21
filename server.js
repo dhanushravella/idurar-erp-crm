@@ -12,8 +12,6 @@ if (major < 14 || (major === 14 && minor <= 0)) {
 require('dotenv').config({ path: '.variables.env' });
 
 // Connect to our Database and handle any bad connections
-// mongoose.connect(process.env.DATABASE);
-console.log(process.env.DATABASE);
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
@@ -23,7 +21,7 @@ mongoose.connection.on('error', (err) => {
 const glob = require('glob');
 const path = require('path');
 
-glob.sync('./models/**/*.js').forEach(function (file) {
+glob.sync('./models/*.js').forEach(function (file) {
   require(path.resolve(file));
 });
 

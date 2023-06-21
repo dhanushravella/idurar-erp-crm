@@ -106,7 +106,6 @@ const PreviewState = ({ tag, color, value }) => {
   );
 };
 export default function Dashboard() {
-  const entity = 'invoice213';
   const dataTableColumns = [
     {
       title: 'Employee',
@@ -131,7 +130,6 @@ export default function Dashboard() {
       },
     },
   ];
-  const config = { entity, dataTableColumns };
 
   return (
     <DashboardLayout>

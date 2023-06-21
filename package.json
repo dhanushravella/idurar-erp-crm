@@ -33,17 +33,9 @@
   "_moduleAliases": {
     "@": "."
   },
-  "description": "Just you wait folks!",
+  "description": "Node Backend for HR Application",
   "main": "app.js",
   "keywords": [],
-  "author": "Salah Eddine Lalami",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/idurar/starter-antd-admin-crud-auth-mern.git"
-  },
-  "bugs": {
-    "url": "https://github.com/idurar/starter-antd-admin-crud-auth-mern/issues"
-  },
-  "homepage": "https://github.com/idurar/starter-antd-admin-crud-auth-mern#readme"
+  "author": "HONO",
+  "license": "MIT"
 }

@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 
 async function createAdmin() {
   try {
-    const Admin = require('../models/erpModels/Admin');
+    const Admin = require('../models/Admin');
     var newAdmin = new Admin();
     const passwordHash = newAdmin.generateHash('admin123');
 

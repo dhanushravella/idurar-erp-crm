@@ -29,20 +29,6 @@ const settingGlobal = async () => {
   }
 };
 
-/**
- * Medical` settings
- */
-const settingMedical = async () => {
-  try {
-    const [settingMedical] = await Promise.all([getData('SettingMedical')]).then((data) => {
-      return data;
-    });
-    return settingMedical;
-  } catch (error) {
-    return error;
-  }
-};
-
 /*
  * Export all settings from here
  */
@@ -50,7 +36,6 @@ const settings = async (req, res, next) => {
   req.settings = {};
   req.settings.commercial = await settingCommercial();
   req.settings.global = await settingGlobal();
-  req.settings.medical = await settingMedical();
 
   next();
 };

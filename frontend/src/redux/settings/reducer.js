@@ -2,8 +2,6 @@ import * as actionTypes from './types';
 
 const INITIAL_SETTINGS_STATE = {
   generalSettings: {},
-  paymentSettings: {},
-  invoiceSettings: {},
   companySettings: {},
   appSettings: {},
   userProfils: {},

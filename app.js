@@ -9,13 +9,13 @@ require('dotenv').config({ path: '.variables.env' });
 
 const helpers = require('./helpers');
 
-const erpApiRouter = require('./routes/erpRoutes/erpApi');
-const erpAuthRouter = require('./routes/erpRoutes/erpAuth');
-const erpDownloadRouter = require('./routes/erpRoutes/erpDownloadRouter');
+const appApiRouter = require('./routes/appRoutes/appApi');
+const appAuthRouter = require('./routes/appRoutes/appAuth');
+const appDownloadRouter = require('./routes/appRoutes/appDownloadRouter');
 
 const errorHandlers = require('./handlers/errorHandlers');
 
-const { isValidAdminToken } = require('./controllers/erpControllers/authJwtController ');
+const { isValidAdminToken } = require('./controllers/appControllers/authJwtController ');
 
 // create our Express app
 const app = express();
@@ -66,10 +66,8 @@ app.use(
     origin: true,
     credentials: true,
   }),
-  erpAuthRouter
+  appAuthRouter
 );
-
-// app.use("/api", cors(), isValidAdminToken, erpApiRouter);
 
 app.use(
   '/api',
@@ -78,10 +76,10 @@ app.use(
     credentials: true,
   }),
   isValidAdminToken,
-  erpApiRouter
+  appApiRouter
 );
 
-app.use('/download', cors(), erpDownloadRouter);
+app.use('/download', cors(), appDownloadRouter);
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
