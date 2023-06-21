@@ -1,18 +1,15 @@
 # Open Source HR - MERN Stack (Node.js/React.js)
 
-IDURAR is Open Source HR APP Based on Mern Stack (Node.js / Express.js / MongoDb / React.js ) with Ant Design (AntD) and Redux
+ONOH is Open Source HR APP Based on Mern Stack (Node.js / Express.js / SQL / React.js ) with Ant Design (AntD), MUI and Redux
 
 ```
 Can you star our GitHub repo? 🤩 Open Source HR !
 ```
 
-![Open Source HR - MERN Stack (Node.js/React.js)](https://user-images.githubusercontent.com/50052356/141647096-dcb66696-6103-4850-ae21-9fc97a412252.png)
-![Open Source HR - MERN Stack (Node.js/React.js)](https://user-images.githubusercontent.com/50052356/141647100-9dfd6ee5-f873-42a8-8923-88bd0cf53606.png)
-
 ## Open Source HR App - Dashboard Admin App
 
-IDURAR is Open Source HR APP Based on Mern Stack (Node.js / Express.js / MongoDb / React.js ) with Ant Design (AntD) and Redux
+ONOH is Open Source HR APP Based on Mern Stack (Node.js / Express.js / SQL / React.js ) with Ant Design (AntD), MUI and Redux
 
-**Live App Demo** : [https://idurarapp.com/open-source-erp-crm/](https://idurarapp.com/open-source-erp-crm/) "Please use chrome"
+**App Demo** : [http://localhost:3000/](http://localhost:3000/) "Please use chrome"
 
 `username : admin@demo.com password : admin123`

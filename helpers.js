@@ -4,7 +4,71 @@
 
 // FS is a built in module to node that let's us read files from the system we're running on
 const fs = require('fs');
-const mongoose = require('mongoose');
+const Request = require('tedious').Request;
+const TYPES = require('tedious').TYPES;
+
+const sql = require('tedious').Connection;
+var config = {
+  server: '172.16.20.200', //update me
+  authentication: {
+    type: 'default',
+    options: {
+      userName: 'SMS1018', //update me
+      password: 'T98WULvxxVfn1wteetjf', //update me
+    },
+  },
+  options: {
+    // If you are on Microsoft Azure, you need encryption:
+    encrypt: false,
+    database: 'Honohr_Uat', //update me
+  },
+};
+var connection = new sql(config);
+connection.on('connect', function (err) {
+  // If no error, then good to proceed.
+  console.log(err);
+  console.log('SQL Connected');
+  executeStatement();
+});
+
+connection.connect();
+
+function executeStatement() {
+  var request = new Request(
+    "SELECT * from PayComputation_Outlier WHERE PayheadName = 'BASIC' AND EmpCode = '1110007'",
+    function (err, rowCount) {
+      if (err) {
+        console.log('Error', err);
+      } else {
+        console.log(rowCount + ' rows');
+      }
+      connection.close();
+    }
+  );
+  console.log('REQUEST', request);
+  var result = '';
+  request.on('row', function (columns) {
+    columns.forEach(function (column) {
+      if (column.value === null) {
+        console.log('NO VALUE NULL');
+      } else {
+        result += column.value + ' ';
+      }
+    });
+    console.log('RESULT', result);
+    result = '';
+  });
+
+  request.on('done', function (rowCount, more) {
+    console.log(rowCount + ' rows returned');
+  });
+
+  // Close the connection after the final event emitted by the request, after the callback passes
+  request.on('requestCompleted', function (rowCount, more) {
+    connection.close();
+  });
+  connection.execSql(request);
+}
 
 const getData = require('./controllers/corsControllers/custom').getData;
 
@@ -35,48 +99,4 @@ exports.adminPhotoUrl = (admin) => {
 };
 
 // Some details about the site
-exports.siteName = `Express.js / MongoBD / Rest Api`;
-
-exports.timeRange = (start, end, format, interval) => {
-  if (format == undefined) {
-    format = 'HH:mm';
-  }
-
-  if (interval == undefined) {
-    interval = 60;
-  }
-  interval = interval > 0 ? interval : 60;
-
-  const range = [];
-  while (moment(start).isBefore(moment(end))) {
-    range.push(moment(start).format(format));
-    start = moment(start).add(interval, 'minutes');
-  }
-  return range;
-};
-
-exports.settingCommercial = async (name) => {
-  try {
-    const Model = mongoose.model('SettingCommercial');
-    const result = await Model.findOne({ name: name });
-    if (result) {
-      return await result.value;
-    }
-    return null;
-  } catch (err) {
-    console.log('setting fetch failed', err);
-  }
-};
-
-exports.settingGlobal = async (name) => {
-  try {
-    const Model = mongoose.model('SettingGlobal');
-    const result = await Model.findOne({ name: name });
-    if (result) {
-      return await result.value;
-    }
-    return null;
-  } catch (err) {
-    console.log('setting fetch failed', err);
-  }
-};
+exports.siteName = `Express.js / SQL / Rest Api`;

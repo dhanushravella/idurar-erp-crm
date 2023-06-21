@@ -7,20 +7,6 @@ export const selectCurrentSettings = createSelector(
   (settings) => settings.current.result
 );
 
-export const selectMoneyFormat = createSelector(
-  [selectCurrentSettings],
-  (settings) => settings.moneyFormat
-);
-export const selectCurrency = createSelector(
-  [selectMoneyFormat],
-  (moneyFormat) => moneyFormat.currencySymbol
-);
-
-export const selectCurrencyPosition = createSelector(
-  [selectMoneyFormat],
-  (moneyFormat) => moneyFormat.currencyPosition
-);
-
 export const selectCreatedSettings = createSelector(
   [selectSettings],
   (settings) => settings.create

@@ -61,14 +61,6 @@ export default function Navigation() {
             <Link to={'/'} />
             Dashboard
           </Menu.Item>
-          <Menu.Item key={'Employee'} icon={<UserOutlined />}>
-            <Link to={'/employee'} />
-            Employee
-          </Menu.Item>
-          <Menu.Item key={'Admin'} icon={<TeamOutlined />}>
-            <Link to={'/admin'} />
-            Admin
-          </Menu.Item>
           <SubMenu key={'Payroll'} icon={<BankOutlined />} title={'Payroll'}>
             <Menu.Item key={'Manage Payroll'}>
               <Link to={'/payroll'} />

@@ -2,17 +2,8 @@ import * as actionTypes from './types';
 
 const INITIAL_SETTINGS_STATE = {
   generalSettings: {},
-  companySettings: {},
   appSettings: {},
   userProfils: {},
-  moneyFormat: {
-    currencySymbol: '$',
-    currencyPosition: 'before',
-    decimalSep: '.',
-    ThousandSep: ',',
-    centPrecision: 2,
-    zeroFormat: false,
-  },
 };
 
 const INITIAL_KEY_STATE = {

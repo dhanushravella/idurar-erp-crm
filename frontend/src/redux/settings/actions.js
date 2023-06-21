@@ -2,26 +2,6 @@ import * as actionTypes from './types';
 import { request } from '@/request';
 
 export const settings = {
-  currencySymbol:
-    ({ value = '$' }) =>
-    async (dispatch) => {
-      dispatch({
-        type: actionTypes.SET_STATE,
-        settingsKey: 'moneyFormat',
-        keyState: 'currencySymbol',
-        payload: value,
-      });
-    },
-  currencyPosition:
-    ({ position = 'before' }) =>
-    async (dispatch) => {
-      dispatch({
-        type: actionTypes.SET_STATE,
-        settingsKey: 'moneyFormat',
-        keyState: 'currencyPosition',
-        payload: position,
-      });
-    },
   resetState:
     (props = {}) =>
     async (dispatch) => {
