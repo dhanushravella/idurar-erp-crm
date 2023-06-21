@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }) {
       <Content
         style={{
           padding: '30px 40px',
-          margin: '70px auto',
+          margin: '60px auto',
           width: '100%',
           //maxWidth: '1100px',
         }}

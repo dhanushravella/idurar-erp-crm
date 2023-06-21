@@ -18,7 +18,7 @@ const PopOverData = ({
     item.breakDown &&
     item.breakDown.length > 0 &&
     item.breakDown.map((item) => (
-      <div className="pad12">
+      <div className="pad10">
         <Row gutter={[0, 0]}>
           <Col span={14}>{item.title}</Col>
           <Col span={2}>-</Col>
@@ -79,9 +79,9 @@ export default function PayCard({
   info,
   colSize,
   midSize,
-  chartData,
   chartType,
   titleAlign,
+  consolidated,
 }) {
   return (
     <Col
@@ -97,12 +97,14 @@ export default function PayCard({
         className="whiteBox shadow"
         style={{ color: '#595959', fontSize: 13, height: 'auto', border: borderColor }}
       >
-        <div
-          className="pad10 strong"
-          style={{ textAlign: titleAlign || 'center', justifyContent: 'center' }}
-        >
-          <h3 style={{ color: '#22075e', marginBottom: 0 }}>{title}</h3>
-        </div>
+        {title && (
+          <div
+            className="pad10 strong"
+            style={{ textAlign: titleAlign || 'center', justifyContent: 'center' }}
+          >
+            <h3 style={{ color: '#22075e', marginBottom: 0 }}>{title}</h3>
+          </div>
+        )}
         <Divider style={{ padding: 0, margin: 0 }}></Divider>
         {payData &&
           payData.length > 0 &&
@@ -182,12 +184,82 @@ export default function PayCard({
               </>
             )
           )}
-
+        {consolidated && consolidated.length > 0 && (
+          <div className="pad10">
+            <Row gutter={[24, 12]}>
+              {consolidated &&
+                consolidated.length > 0 &&
+                consolidated.map((item) =>
+                  item.title === '' ? (
+                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+                  ) : (
+                    <>
+                      <Col
+                        className="gutter-row"
+                        xs={{ span: 24 }}
+                        sm={{ span: 12 }}
+                        md={{ span: 6 }}
+                        lg={{ span: 6 }}
+                        xl={{ span: 4 }}
+                        style={{ textAlign: 'center' }}
+                      >
+                        <Popover
+                          /*color={item.tagColor}*/
+                          overlayStyle={{
+                            width: '40vw',
+                          }}
+                          content={
+                            item && item.breakDown && item.breakDown.length > 0 ? (
+                              <Row gutter={[0, 0]}>
+                                <Col
+                                  xs={{ span: 24 }}
+                                  sm={{ span: 24 }}
+                                  md={{ span: 24 }}
+                                  lg={{ span: 12 }}
+                                >
+                                  <PopOverData item={item}></PopOverData>
+                                </Col>
+                                <Col md={{ span: 24 }} lg={{ span: 12 }}>
+                                  {/*<Column {...chartData} />*/}
+                                  <ChartData
+                                    payItem={item}
+                                    title={item.title}
+                                    chartType={chartType}
+                                  ></ChartData>
+                                </Col>
+                              </Row>
+                            ) : (
+                              <>
+                                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+                              </>
+                            )
+                          }
+                          title={<h3>{item.title}</h3>}
+                        >
+                          <Tag
+                            color={item.tagColor}
+                            style={{
+                              margin: '0 auto',
+                              justifyContent: 'center',
+                              textAlign: 'center',
+                              width: '100%',
+                            }}
+                          >
+                            <h2>{item.value}</h2> {item.title}
+                          </Tag>
+                        </Popover>
+                      </Col>
+                    </>
+                  )
+                )}
+            </Row>
+          </div>
+        )}
         <Row gutter={[8, 8]}>
           {info &&
             Object.keys(info).length !== 0 &&
             Object.keys(info).map((item) => {
-              if (item === 'payData') return null;
+              if (item === 'payData' || item === 'consolidatedData') return null;
               return (
                 <>
                   <Col

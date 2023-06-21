@@ -41,14 +41,14 @@ export default function DeleteModal({ config, children }) {
     if (!isLoading) modal.close();
   };
   return (
-    <Modal
+    (<Modal
       title={modalTitle}
-      visible={isModalOpen}
+      open={isModalOpen}
       onOk={handleOk}
       onCancel={handleCancel}
       confirmLoading={isLoading}
     >
       {children}
-    </Modal>
+    </Modal>)
   );
 }

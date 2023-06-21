@@ -2,6 +2,7 @@ import * as actionTypes from './types';
 
 export const initialState = {
   isNavMenuClose: false,
+  currentActiveMenu: '',
 };
 
 export function contextReducer(state, action) {
@@ -20,6 +21,12 @@ export function contextReducer(state, action) {
       return {
         ...state,
         isNavMenuClose: !state.isNavMenuClose,
+      };
+    case actionTypes.CLICK_NAV_MENU:
+      return {
+        ...state,
+        isNavMenuClose: true,
+        currentActiveMenu: window.location.pathname,
       };
 
     default: {

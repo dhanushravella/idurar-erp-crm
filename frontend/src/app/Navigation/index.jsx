@@ -23,6 +23,10 @@ export default function Navigation() {
   const { navMenu } = appContextAction;
   const [showLogoApp, setLogoApp] = useState(isNavMenuClose);
 
+  const updateActivity = (key) => {
+    navMenu.click(window.location.pathname);
+  };
+
   useEffect(() => {
     if (isNavMenuClose) {
       setLogoApp(isNavMenuClose);
@@ -57,22 +61,6 @@ export default function Navigation() {
             <Link to={'/'} />
             Dashboard
           </Menu.Item>
-          {/*<Menu.Item key={'Customer'} icon={<CustomerServiceOutlined />}>
-            <Link to={'/customer'} />
-            Customer
-          </Menu.Item>
-          <Menu.Item key={'Invoice'} icon={<FileTextOutlined />}>
-            <Link to={'/invoice'} />
-            Invoice
-          </Menu.Item>
-          <Menu.Item key={'Quote'} icon={<FileSyncOutlined />}>
-            <Link to={'/quote'} />
-            Quote
-          </Menu.Item>
-          <Menu.Item key={'PaymentInvoice'} icon={<CreditCardOutlined />}>
-            <Link to={'/payment/invoice'} />
-            Payment Invoice
-          </Menu.Item>*/}
           <Menu.Item key={'Employee'} icon={<UserOutlined />}>
             <Link to={'/employee'} />
             Employee
@@ -95,7 +83,7 @@ export default function Navigation() {
               Manage Bank Details
             </Menu.Item>
             <Menu.Item key={'View Payslip'}>
-              <Link to={'/payroll'} />
+              <Link to={'/payroll'} onClick={updateActivity} />
               View Payslip
             </Menu.Item>
           </SubMenu>

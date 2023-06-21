@@ -35,7 +35,7 @@ function App() {
       <Layout style={{ minHeight: '100vh' }}>
         <Navigation />
         <Layout style={{ minHeight: '100vh', position: 'relative' }}>
-          <HeaderContent activity={'View Payslip'} />
+          <HeaderContent activity={''} />
           <Router isLoggedIn={true} />
         </Layout>
       </Layout>

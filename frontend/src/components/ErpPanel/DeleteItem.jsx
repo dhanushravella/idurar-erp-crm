@@ -41,9 +41,9 @@ export default function Delete({ config }) {
     if (!isLoading) modal.close();
   };
   return (
-    <Modal
+    (<Modal
       title={modalTitle}
-      visible={deleteModal.isOpen}
+      open={deleteModal.isOpen}
       onOk={handleOk}
       onCancel={handleCancel}
       confirmLoading={isLoading}
@@ -52,6 +52,6 @@ export default function Delete({ config }) {
         {deleteMessage}
         {displayItem}
       </p>
-    </Modal>
+    </Modal>)
   );
 }

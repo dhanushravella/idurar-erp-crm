@@ -1,17 +1,11 @@
 import React from 'react';
-import { Divider, Row, Tooltip, Button, Tag, Tour } from 'antd';
+import { Divider, Collapse, Row, Col, Tooltip, Button, Tag, Tour, Carousel } from 'antd';
 
-import {
-  ArrowUpOutlined,
-  ArrowDownOutlined,
-  PrinterOutlined,
-  StockOutlined,
-} from '@ant-design/icons';
+import { PrinterOutlined, StockOutlined } from '@ant-design/icons';
 import { DashboardLayout } from '@/layout';
 import PayCard from '@/components/CarousalCard';
 import PayData from '@/data/PayData.json';
 import PayMonths from '@/data/PayMonths.json';
-import { Carousel } from '@trendyol-js/react-carousel';
 import { useRef, useState } from 'react';
 
 const GroupPayData =
@@ -22,58 +16,15 @@ const GroupPayData =
     return group;
   }, []);
 
-const data = [
-  {
-    type: 'Mar 2023',
-    value: 38,
-  },
-  {
-    type: 'Apr 2023',
-    value: 52,
-  },
-  {
-    type: 'Feb 2023',
-    value: 24,
-  },
-  {
-    type: 'Jan 2023',
-    value: 22,
-  },
-];
-
-const chartConfig = {
-  data,
-  xField: 'type',
-  yField: 'value',
-  label: {
-    position: 'middle',
-    style: {
-      fill: '#FFFFFF',
-      opacity: 0.6,
-    },
-  },
-  xAxis: {
-    label: {
-      autoHide: true,
-      autoRotate: false,
-    },
-  },
+const contentStyle = {
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
 };
 
-function getChartData(data) {
-  var chartData = [];
-  data.forEach((element) => {
-    chartData.push({
-      type: element.type,
-      value: element.value,
-    });
-  });
-
-  return chartData;
-}
-
 export default function Payroll() {
-  const chartData = getChartData(PayMonths);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -108,42 +59,88 @@ export default function Payroll() {
     <>
       <DashboardLayout>
         <Row gutter={[12, 12]} ref={ref1}>
-          {/*<Carousel show={3} slide={1} swiping={true}>*/}
           {PayMonths.map((month) => (
             <PayCard
               title={month.title}
               chartType={'pie'}
               payData={month.payData}
               borderColor={month.active && '2px solid lightblue'}
-              chartData={chartConfig}
             ></PayCard>
           ))}
-          {/*</Carousel>*/}
+        </Row>
+        <Divider style={{ padding: 0, margin: 10 }}></Divider>
+        <Row gutter={[24, 24]}>
+          <Col
+            className="gutter-row"
+            xs={{ span: 24 }}
+            sm={{ span: 24 }}
+            md={{ span: 24 }}
+            lg={{ span: 24 }}
+            xl={{ span: 24 }}
+            xxl={{ span: 24 }}
+          >
+            <Collapse
+              size="small"
+              items={[
+                {
+                  key: '1',
+                  label: (
+                    <div className="strong">
+                      Payslip for the period of <Tag color={'cyan'}>{PayData.Period}</Tag>{' '}
+                      <Tooltip title="Print Report">
+                        <PrinterOutlined
+                          style={{ fontSize: '16px', position: 'absolute', right: '50px' }}
+                          ref={ref4}
+                        />
+                      </Tooltip>
+                      <Tooltip title="Show Tour">
+                        <Button
+                          type="primary"
+                          shape="circle"
+                          icon={<StockOutlined />}
+                          onClick={() => setOpen(true)}
+                          style={{ position: 'absolute', right: '100px' }}
+                        />
+                      </Tooltip>
+                    </div>
+                  ),
+                  children: (
+                    <PayCard
+                      title={
+                        <div className="strong">
+                          Payslip for the period of <Tag color={'cyan'}>{PayData.Period}</Tag>{' '}
+                          <Tooltip title="Print Report">
+                            <PrinterOutlined style={{ position: 'absolute', right: '50px' }} />
+                          </Tooltip>
+                          <Tooltip title="Show Tour">
+                            <Button
+                              type="primary"
+                              shape="circle"
+                              icon={<StockOutlined />}
+                              onClick={() => setOpen(true)}
+                              style={{ position: 'absolute', right: '100px', top: '15px' }}
+                            />
+                          </Tooltip>
+                        </div>
+                      }
+                      titleAlign={'left'}
+                      info={PayData}
+                      colSize={24}
+                      midSize={24}
+                    ></PayCard>
+                  ),
+                },
+              ]}
+            />
+          </Col>
         </Row>
         <Divider style={{ padding: 0, margin: 10 }}></Divider>
         <Row gutter={[24, 24]} ref={ref2}>
           <PayCard
-            title={
-              <div className="strong">
-                Payslip for the period of <Tag color={'cyan'}>{PayData.Period}</Tag>{' '}
-                <Tooltip title="Print Report">
-                  <PrinterOutlined style={{ position: 'absolute', right: '50px' }} ref={ref4} />
-                </Tooltip>
-                <Tooltip title="Show Tour">
-                  <Button
-                    type="primary"
-                    shape="circle"
-                    icon={<StockOutlined />}
-                    onClick={() => setOpen(true)}
-                  />
-                </Tooltip>
-              </div>
-            }
             titleAlign={'left'}
-            info={PayData}
+            consolidated={PayData.consolidatedData}
             colSize={24}
             midSize={24}
-            chartData={chartConfig}
           ></PayCard>
         </Row>
         <Divider style={{ padding: 0, margin: 10 }}></Divider>
@@ -156,7 +153,6 @@ export default function Payroll() {
                   title={payType}
                   chartType={'bar'}
                   payData={GroupPayData[payType]}
-                  chartData={chartConfig}
                 ></PayCard>
               );
             })}
