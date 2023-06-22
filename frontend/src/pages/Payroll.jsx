@@ -1,9 +1,8 @@
 import React from 'react';
-import { Divider, Collapse, Row, Col, Tooltip, Button, Tag, Tour, Carousel } from 'antd';
+import { Divider, Collapse, Row, Col, Tooltip, Button, Tag, Tour } from 'antd';
 
 import { PrinterOutlined, StockOutlined } from '@ant-design/icons';
 import { DashboardLayout } from '@/layout';
-import { Column, Pie } from '@ant-design/plots';
 import PayCard from '@/components/CarousalCard';
 import PayData from '@/data/PayData.json';
 import PayMonths from '@/data/PayMonths.json';
@@ -17,7 +16,7 @@ const GroupPayData =
     return group;
   }, []);
 
-export default function Payroll() {
+const Payroll = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -174,4 +173,6 @@ export default function Payroll() {
       <Tour open={open} onClose={() => setOpen(false)} steps={steps} />
     </>
   );
-}
+};
+
+export default Payroll;

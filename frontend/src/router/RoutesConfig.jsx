@@ -17,4 +17,8 @@ export const routesConfig = [
     path: '/payroll',
     component: 'Payroll',
   },
+  {
+    path: '/turbo',
+    component: 'Turbo',
+  },
 ];

@@ -61,6 +61,10 @@ export default function Navigation() {
             <Link to={'/'} />
             Dashboard
           </Menu.Item>
+          <Menu.Item key={'Turo'} icon={<DashboardOutlined />}>
+            <Link to={'/turbo'} />
+            Turbo Troubleshooter
+          </Menu.Item>
           <SubMenu key={'Payroll'} icon={<BankOutlined />} title={'Payroll'}>
             <Menu.Item key={'Manage Payroll'}>
               <Link to={'/payroll'} />
