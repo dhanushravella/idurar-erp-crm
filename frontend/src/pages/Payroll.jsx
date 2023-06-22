@@ -3,6 +3,7 @@ import { Divider, Collapse, Row, Col, Tooltip, Button, Tag, Tour, Carousel } fro
 
 import { PrinterOutlined, StockOutlined } from '@ant-design/icons';
 import { DashboardLayout } from '@/layout';
+import { Column, Pie } from '@ant-design/plots';
 import PayCard from '@/components/CarousalCard';
 import PayData from '@/data/PayData.json';
 import PayMonths from '@/data/PayMonths.json';
@@ -15,14 +16,6 @@ const GroupPayData =
     group[payType['prefix']].push(payType);
     return group;
   }, []);
-
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
 
 export default function Payroll() {
   const ref1 = useRef(null);
@@ -64,6 +57,7 @@ export default function Payroll() {
               title={month.title}
               chartType={'pie'}
               payData={month.payData}
+              colSize={6}
               borderColor={month.active && '2px solid lightblue'}
             ></PayCard>
           ))}
@@ -144,18 +138,37 @@ export default function Payroll() {
           ></PayCard>
         </Row>
         <Divider style={{ padding: 0, margin: 10 }}></Divider>
-        <Row gutter={[8, 8]} ref={ref3}>
-          {GroupPayData &&
-            Object.keys(GroupPayData).map((payType) => {
-              return (
-                <PayCard
-                  info=""
-                  title={payType}
-                  chartType={'bar'}
-                  payData={GroupPayData[payType]}
-                ></PayCard>
-              );
-            })}
+        <Row>
+          <Col
+            className="gutter-row"
+            xs={{ span: 24 }}
+            sm={{ span: 24 }}
+            md={{ span: 24 }}
+            lg={{ span: 16 }}
+            xl={{ span: 16 }}
+            xxl={{ span: 16 }}
+          >
+            <Row gutter={[8, 8]} ref={ref3}>
+              {GroupPayData &&
+                Object.keys(GroupPayData).map((payType) => {
+                  return (
+                    <PayCard
+                      info=""
+                      title={payType}
+                      chartType={'bar'}
+                      payData={GroupPayData[payType]}
+                    ></PayCard>
+                  );
+                })}
+            </Row>
+          </Col>
+          <PayCard
+            title={PayMonths[0].title}
+            chartType={'onlychart'}
+            payData={PayMonths[0]}
+            colSize={6}
+            borderColor={PayMonths[0].active && '2px solid lightblue'}
+          ></PayCard>
         </Row>
       </DashboardLayout>
       <Tour open={open} onClose={() => setOpen(false)} steps={steps} />

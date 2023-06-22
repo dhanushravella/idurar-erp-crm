@@ -18,7 +18,7 @@ const PopOverData = ({
     item.breakDown &&
     item.breakDown.length > 0 &&
     item.breakDown.map((item) => (
-      <div className="pad10">
+      <div className="pad5">
         <Row gutter={[0, 0]}>
           <Col span={14}>{item.title}</Col>
           <Col span={2}>-</Col>
@@ -40,7 +40,7 @@ const PopOverData = ({
 };
 
 const ChartData = ({ payItem, title, chartType }) => {
-  console.log(title);
+  console.log(payItem);
   const data = payItem.breakDown.map((item) => {
     return {
       type: item.title,
@@ -55,12 +55,22 @@ const ChartData = ({ payItem, title, chartType }) => {
     angleField: 'value',
     colorField: 'type',
     label: {
+      type: 'inner',
+      offset: '-30%',
       position: 'middle',
       style: {
         fill: '#FFFFFF',
         opacity: 0.6,
       },
     },
+    interactions: [
+      {
+        type: 'element-active',
+      },
+      {
+        type: 'element-selected',
+      },
+    ],
     xAxis: {
       label: {
         autoHide: true,
@@ -93,11 +103,15 @@ const DrillChartData = ({ payItem, title, chartType }) => {
     yField: 'value',
     angleField: 'value',
     colorField: 'type',
+    radius: 0.9,
     label: {
       position: 'middle',
+      type: 'inner',
       style: {
         fill: '#FFFFFF',
         opacity: 0.6,
+        fontSize: 14,
+        textAlign: 'center',
       },
     },
     xAxis: {
@@ -194,11 +208,11 @@ export default function PayCard({
                               </Col>
                               <Col md={{ span: 24 }} lg={{ span: 12 }}>
                                 {/*<Column {...chartData} />*/}
-                                <ChartData
+                                {/*<ChartData
                                   payItem={item}
                                   title={item.title}
                                   chartType={chartType}
-                                ></ChartData>
+                          ></ChartData>*/}
                               </Col>
                             </Row>
                           ) : (
@@ -339,11 +353,11 @@ export default function PayCard({
     </Col>
   ) : (
     <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 8 }}>
-      <DrillChartData
+      {/*<DrillChartData
         payItem={payData.payData}
         title={payData.title}
         chartType={'pie'}
-      ></DrillChartData>
+  ></DrillChartData>*/}
     </Col>
   );
 }

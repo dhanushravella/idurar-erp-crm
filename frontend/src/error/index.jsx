@@ -1,3 +1,5 @@
+import ErrorBoundary from 'antd/es/alert/ErrorBoundary';
+import ComponentThatMayError from './ComponentThatMayError';
 // https://kentcdodds.com/blog/use-react-error-boundary-to-handle-errors-in-react
 export default function ErrorFallback({ error }) {
   return (
@@ -9,7 +11,7 @@ export default function ErrorFallback({ error }) {
 }
 const crud = (
   <ErrorBoundary
-    fallbackRender={({ error, resetErrorBoundary }) => (
+    fallbackRender={({ error, resetErrorBoundary, resetComponentState }) => (
       <div role="alert">
         <div>Oh no</div>
         <pre>{error.message}</pre>

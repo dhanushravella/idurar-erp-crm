@@ -26,9 +26,12 @@ var config = {
 var connection = new sql(config);
 connection.on('connect', function (err) {
   // If no error, then good to proceed.
-  console.log(err);
-  console.log('SQL Connected');
-  executeStatement();
+  if (err) {
+    console.log('SQL CONNECTION ERROR', err);
+  } else {
+    console.log('SQL Connected');
+    executeStatement();
+  }
 });
 
 connection.connect();

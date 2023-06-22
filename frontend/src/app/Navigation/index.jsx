@@ -79,16 +79,10 @@ export default function Navigation() {
               View Payslip
             </Menu.Item>
           </SubMenu>
-          <SubMenu key={'Settings'} icon={<SettingOutlined />} title={'Settings'}>
-            <Menu.Item key={'SettingsPage'}>
-              <Link to={'/settings'} />
-              General Settings
-            </Menu.Item>
-            <Menu.Item key={'Role'}>
-              <Link to={'/role'} />
-              Role
-            </Menu.Item>
-          </SubMenu>
+          <Menu.Item key={'Settings'} icon={<SettingOutlined />} title={'Settings'}>
+            <Link to={'/settings'} />
+            Settings
+          </Menu.Item>
         </Menu>
       </Sider>
     </>

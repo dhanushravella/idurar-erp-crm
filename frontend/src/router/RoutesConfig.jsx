@@ -14,10 +14,6 @@ export const routesConfig = [
     component: 'Settings/Settings',
   },
   {
-    path: '/role',
-    component: 'Role',
-  },
-  {
     path: '/payroll',
     component: 'Payroll',
   },
