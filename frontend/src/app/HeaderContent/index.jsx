@@ -1,12 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useAppContext } from '@/context/appContext';
 import { Avatar, Menu, Dropdown, AutoComplete, Input, Breadcrumb } from 'antd';
 
 import {
   AppstoreOutlined,
-  SettingOutlined,
   MailOutlined,
   LogoutOutlined,
   BellOutlined,
@@ -15,13 +13,11 @@ import {
 } from '@ant-design/icons';
 import photo from '@/style/images/photo.png';
 
-import { logout } from '@/redux/auth/actions';
 import history from '@/utils/history';
 import uniqueId from '@/utils/uinqueId';
 
 export default function HeaderContent() {
-  const dispatch = useDispatch();
-  const { state: stateApp, appContextAction } = useAppContext();
+  const { state: stateApp } = useAppContext();
   const { isNavMenuClose, currentActiveMenu } = stateApp;
   const [activity, setActivity] = useState('');
   useEffect(() => {

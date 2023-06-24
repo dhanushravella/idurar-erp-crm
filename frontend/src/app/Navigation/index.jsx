@@ -6,13 +6,7 @@ import { useAppContext } from '@/context/appContext';
 import logoIcon from '@/style/images/logo-icon.png';
 import logoText from '@/style/images/logo-text.png';
 
-import {
-  SettingOutlined,
-  DashboardOutlined,
-  TeamOutlined,
-  UserOutlined,
-  BankOutlined,
-} from '@ant-design/icons';
+import { SettingOutlined, DashboardOutlined, BugOutlined, BankOutlined } from '@ant-design/icons';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -61,9 +55,9 @@ export default function Navigation() {
             <Link to={'/'} />
             Dashboard
           </Menu.Item>
-          <Menu.Item key={'Turo'} icon={<DashboardOutlined />}>
+          <Menu.Item key={'Turo'} icon={<BugOutlined />}>
             <Link to={'/turbo'} />
-            Turbo Troubleshooter
+            Ask Jeeves
           </Menu.Item>
           <SubMenu key={'Payroll'} icon={<BankOutlined />} title={'Payroll'}>
             <Menu.Item key={'Manage Payroll'}>

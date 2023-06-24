@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Space, Divider, Row, Col, Popover, Tag, Empty } from 'antd';
-import { DashboardLayout } from '@/layout';
+import React from 'react';
+import { Divider, Row, Col, Popover, Tag, Empty } from 'antd';
 import { Column, Pie } from '@ant-design/plots';
 
 const PopOverData = ({

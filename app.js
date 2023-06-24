@@ -70,7 +70,7 @@ app.use(
 );
 
 app.use(
-  '/api',
+  '/apiMain',
   cors({
     origin: true,
     credentials: true,

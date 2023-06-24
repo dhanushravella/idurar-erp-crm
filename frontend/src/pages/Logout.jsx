@@ -1,5 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
-import { Button, Result } from 'antd';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout as logoutAction } from '@/redux/auth/actions';
 import PageLoader from '@/components/PageLoader';

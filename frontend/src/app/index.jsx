@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Router from '@/router';
 
-import useNetwork from '@/hooks/useNetwork';
-
-import { Layout, notification } from 'antd';
+import { Layout } from 'antd';
 
 import Navigation from '@/app/Navigation';
 
