@@ -7,7 +7,8 @@ import successHandler from './successHandler';
 import profanityWords from '@/words.json';
 
 axios.defaults.baseURL = API_BASE_URL;
-axios.defaults.withCredentials = true;
+// Commented temporarlily for testing the cors issue
+// axios.defaults.withCredentials = true;
 
 const request = {
   create: async ({ entity, jsonData }) => {
@@ -104,6 +105,9 @@ const request = {
 
   list: async ({ entity, options = {} }) => {
     try {
+      axios.defaults.baseURL = entity === 'payrolls' ? 'http://localhost:8080/api/' : API_BASE_URL;
+      axios.defaults.withCredentials = entity === 'payrolls' ? false : true;
+      console.log(axios.defaults.baseURL);
       let query = '?';
       for (var key in options) {
         query += key + '=' + options[key] + '&';
@@ -111,6 +115,80 @@ const request = {
       query = query.slice(0, -1);
 
       const response = await axios.get(entity + '/list' + query);
+
+      successHandler(response, {
+        notifyOnSuccess: false,
+        notifyOnFailed: false,
+      });
+      // Remove the item from response.data by checking with from the list of profanity words and return the response.data
+      // Add a condition to check if response data is null and conatcins result only then do the profanity check
+      if (response.data && response.data.result) {
+        response.data.result = response.data.result.filter((item) => {
+          let isProfanity = false;
+          profanityWords.forEach((word) => {
+            if (item.name?.toLowerCase().includes(word)) {
+              isProfanity = true;
+            }
+          });
+          return !isProfanity;
+        });
+      }
+
+      return response.data;
+    } catch (error) {
+      return errorHandler(error);
+    }
+  },
+
+  fetch: async ({ entity, options = {} }) => {
+    try {
+      axios.defaults.baseURL = entity === 'payrolls' ? 'http://localhost:8080/api/' : API_BASE_URL;
+      axios.defaults.withCredentials = entity === 'payrolls' ? false : true;
+      console.log(axios.defaults.baseURL);
+      let query = '?';
+      for (var key in options) {
+        query += key + '=' + options[key] + '&';
+      }
+      query = query.slice(0, -1);
+
+      const response = await axios.get(entity + '/fetch' + query);
+
+      successHandler(response, {
+        notifyOnSuccess: false,
+        notifyOnFailed: false,
+      });
+      // Remove the item from response.data by checking with from the list of profanity words and return the response.data
+      // Add a condition to check if response data is null and conatcins result only then do the profanity check
+      if (response.data && response.data.result) {
+        response.data.result = response.data.result.filter((item) => {
+          let isProfanity = false;
+          profanityWords.forEach((word) => {
+            if (item.name?.toLowerCase().includes(word)) {
+              isProfanity = true;
+            }
+          });
+          return !isProfanity;
+        });
+      }
+
+      return response.data;
+    } catch (error) {
+      return errorHandler(error);
+    }
+  },
+
+  master: async ({ entity, options = {} }) => {
+    try {
+      axios.defaults.baseURL = entity === 'payrolls' ? 'http://localhost:8080/api/' : API_BASE_URL;
+      axios.defaults.withCredentials = entity === 'payrolls' ? false : true;
+      console.log(axios.defaults.baseURL);
+      let query = '?';
+      for (var key in options) {
+        query += key + '=' + options[key] + '&';
+      }
+      query = query.slice(0, -1);
+
+      const response = await axios.get(entity + '/master' + query);
 
       successHandler(response, {
         notifyOnSuccess: false,

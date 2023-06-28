@@ -1,9 +1,10 @@
 import React from 'react';
-import { Divider, Row, Col, Popover, Tag, Empty } from 'antd';
+import { Divider, Row, Col, Popover, Tag, Empty, Tooltip } from 'antd';
 import { Column, Pie } from '@ant-design/plots';
+import { WarningOutlined } from '@ant-design/icons';
 
 const PopOverData = ({
-  item,
+  popItem,
   borderColor,
   payData,
   info,
@@ -13,10 +14,10 @@ const PopOverData = ({
   chartType,
 }) => {
   return (
-    item &&
-    item.breakDown &&
-    item.breakDown.length > 0 &&
-    item.breakDown.map((item) => (
+    popItem &&
+    popItem.breakDown &&
+    popItem.breakDown.length > 0 &&
+    popItem.breakDown.map((item) => (
       <div className="pad10">
         <Row gutter={[0, 0]}>
           <Col span={14}>{item.title}</Col>
@@ -39,7 +40,6 @@ const PopOverData = ({
 };
 
 const ChartData = ({ payItem, title, chartType }) => {
-  console.log(title);
   const data = payItem.breakDown.map((item) => {
     return {
       type: item.title,
@@ -72,7 +72,6 @@ const ChartData = ({ payItem, title, chartType }) => {
 };
 
 const DrillChartData = ({ payItem, title, chartType }) => {
-  console.log(payItem);
   const data = payItem.map((item) => {
     return {
       type: item.title,
@@ -169,7 +168,7 @@ export default function PayCard({
                     </Col>
                     <Col
                       className="gutter-row"
-                      span={11}
+                      span={10}
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
@@ -189,7 +188,7 @@ export default function PayCard({
                                 md={{ span: 24 }}
                                 lg={{ span: 12 }}
                               >
-                                <PopOverData item={item}></PopOverData>
+                                <PopOverData popItem={item}></PopOverData>
                               </Col>
                               <Col md={{ span: 24 }} lg={{ span: 12 }}>
                                 {/*<Column {...chartData} />*/}
@@ -219,6 +218,15 @@ export default function PayCard({
                         </Tag>
                       </Popover>
                     </Col>
+                    {item.outlierReason && (
+                      <Col span={1}>
+                        <Tooltip title={item.outlierReason}>
+                          <WarningOutlined
+                            style={{ fontSize: '16px', position: 'absolute', right: '10px' }}
+                          />
+                        </Tooltip>
+                      </Col>
+                    )}
                   </Row>
                 </div>
               </>
@@ -257,7 +265,7 @@ export default function PayCard({
                                   md={{ span: 24 }}
                                   lg={{ span: 12 }}
                                 >
-                                  <PopOverData item={item}></PopOverData>
+                                  <PopOverData popItem={item}></PopOverData>
                                 </Col>
                                 <Col md={{ span: 24 }} lg={{ span: 12 }}>
                                   {/*<Column {...chartData} />*/}
@@ -313,7 +321,7 @@ export default function PayCard({
                       <Row gutter={[0, 24]}>
                         <Col className="gutter-row" span={1}></Col>
                         <Col className="gutter-row" span={10} style={{ textAlign: 'left' }}>
-                          <div className="left strong">{item}</div>
+                          <div className="left strong">{info[item].title}</div>
                         </Col>
                         <Col className="gutter-row" span={1}>
                           :
@@ -325,7 +333,15 @@ export default function PayCard({
                             display: 'flex',
                           }}
                         >
-                          {info[item]}
+                          {info[item].changeReason && info[item].changeReason !== '' ? (
+                            <Tooltip title={info[item].changeReason}>
+                              <Tag color={info[item].tagColor}>
+                                <div className="left">{info[item].value}</div>
+                              </Tag>
+                            </Tooltip>
+                          ) : (
+                            <>{info[item].value}</>
+                          )}
                         </Col>
                       </Row>
                     </div>

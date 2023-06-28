@@ -1,24 +1,141 @@
 {
-  "Period": "May 2023",
-  "Company": "ABC Pvt Ltd",
-  "Employee": "John Doe",
-  "EmployeeId": "123456",
-  "Designation": "Software Engineer",
-  "Department": "Engineering",
-  "Bank": "HDFC Bank",
-  "AccountNumber": "1234567890",
-  "IFSC": "HDFC0001234",
-  "PAN": "ABCDE1234F",
-  "UAN": "123456789012",
-  "PFNumber": "1234567890",
-  "Location": "Mumbai",
-  "Gender": "Male",
-  "DateOfBirth": "01/01/1990",
-  "DateOfJoining": "01/01/2020",
-  "MonthDays": 31,
-  "WorkingDays": 23,
-  "ArrearDays": 0,
-  "ESINumber": "12345678901234567",
+  "period": "May 2023",
+  "employeeCode": "123456",
+  "info": [
+    {
+      "title": "Pay Period",
+      "value": "May 2023",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Company",
+      "value": "ABC Pvt Ltd",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Name",
+      "value": "John Doe",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Employee Code",
+      "value": "123456",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Designation",
+      "value": "Software Engineer",
+      "tagColor": "blue",
+      "recentChange": true,
+      "changeReason": "Promotion as part of appraisal cycle 2023 effetive 1st April 2023"
+    },
+    {
+      "title": "Department",
+      "value": "Engineering",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Bank Name",
+      "value": "HDFC Bank",
+      "tagColor": "blue",
+      "recentChange": true,
+      "changeReason": "Bank information updated on 26th May 2023"
+    },
+    {
+      "title": "Account Number",
+      "value": "123457890",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "IFSC Code",
+      "value": "HDFC00001234",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "PAN Number",
+      "value": "ABCDE1234F",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "UAN Number",
+      "value": "123456789012",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "PF Number",
+      "value": "1234567890",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Location",
+      "value": "Mumbai",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Gender",
+      "value": "Male",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Date Of Birth",
+      "value": "01/01/1990",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Joining Date",
+      "value": "01/01/2020",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Month Days",
+      "value": 31,
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "Working Days",
+      "value": "23",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    },
+    {
+      "title": "ESI Number",
+      "value": "12345678901234567",
+      "tagColor": "blue",
+      "recentChange": false,
+      "changeReason": ""
+    }
+  ],
   "payData": [
     {
       "title": "Basic Pay",
@@ -82,9 +199,11 @@
     },
     {
       "title": "Compensatory Allowance",
-      "value": "10,000",
+      "value": "7,000",
       "tagColor": "green",
       "prefix": "Earnings",
+      "isOutlier": true,
+      "outlierReason": "Option of Provident Fund percentage is chnaged from 11% to 15% effective 1st May 2023. Hence the same is adjusted from compensatory allowance to Provident Fund",
       "breakDown": [
         {
           "title": "Apr 2023",
@@ -154,7 +273,7 @@
     },
     {
       "title": "PF Employee Contribution",
-      "value": "10,000",
+      "value": "15,000",
       "tagColor": "red",
       "prefix": "Deductions",
       "breakDown": [
@@ -164,11 +283,11 @@
         },
         {
           "title": "Mar 2023",
-          "value": "10,000"
+          "value": "12,000"
         },
         {
           "title": "Feb 2023",
-          "value": "15,000"
+          "value": "12,000"
         },
         {
           "title": "Jan 2023",
@@ -211,13 +330,13 @@
   "consolidatedData": [
     {
       "title": "Total Earnings",
-      "value": "1,10,000",
+      "value": "1,07,000",
       "tagColor": "blue",
       "prefix": "consolidated",
       "breakDown": [
         {
           "title": "Outlier",
-          "value": "NO"
+          "value": "YES"
         },
         {
           "title": "Apr 2023",
@@ -239,13 +358,13 @@
     },
     {
       "title": "Total Deductions",
-      "value": "30,000",
+      "value": "33,000",
       "tagColor": "warning",
       "prefix": "consolidated",
       "breakDown": [
         {
           "title": "Outlier",
-          "value": "NO"
+          "value": "YES"
         },
         {
           "title": "Apr 2023",
@@ -257,7 +376,7 @@
         },
         {
           "title": "Feb 2023",
-          "value": "27,000"
+          "value": "30,000"
         },
         {
           "title": "Jan 2023",
@@ -267,13 +386,13 @@
     },
     {
       "title": "Net Pay",
-      "value": "80,000",
+      "value": "77,000",
       "tagColor": "cyan",
       "prefix": "consolidated",
       "breakDown": [
         {
           "title": "Outlier",
-          "value": "NO"
+          "value": "YES"
         },
         {
           "title": "Apr 2023",
@@ -302,7 +421,7 @@
     },
     {
       "title": "Pay Date",
-      "value": "31th May 2023",
+      "value": "31st May 2023",
       "tagColor": "purple",
       "prefix": "consolidated",
       "breakDown": []

@@ -79,11 +79,14 @@ const Payroll = () => {
                   key: '1',
                   label: (
                     <div className="strong">
-                      Payslip for the period of <Tag color={'cyan'}>{PayData.Period}</Tag>{' '}
+                      Payslip for the period of <Tag color={'cyan'}>{PayData.period}</Tag>{' '}
                       <Tooltip title="Print Report">
                         <PrinterOutlined
                           style={{ fontSize: '16px', position: 'absolute', right: '50px' }}
                           ref={ref4}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                          }}
                         />
                       </Tooltip>
                       <Tooltip title="Show Tour">
@@ -91,7 +94,10 @@ const Payroll = () => {
                           type="primary"
                           shape="circle"
                           icon={<StockOutlined />}
-                          onClick={() => setOpen(true)}
+                          onClick={(event) => {
+                            setOpen(true);
+                            event.stopPropagation();
+                          }}
                           style={{ position: 'absolute', right: '100px' }}
                         />
                       </Tooltip>
@@ -99,25 +105,9 @@ const Payroll = () => {
                   ),
                   children: (
                     <PayCard
-                      title={
-                        <div className="strong">
-                          Payslip for the period of <Tag color={'cyan'}>{PayData.Period}</Tag>{' '}
-                          <Tooltip title="Print Report">
-                            <PrinterOutlined style={{ position: 'absolute', right: '50px' }} />
-                          </Tooltip>
-                          <Tooltip title="Show Tour">
-                            <Button
-                              type="primary"
-                              shape="circle"
-                              icon={<StockOutlined />}
-                              onClick={() => setOpen(true)}
-                              style={{ position: 'absolute', right: '100px', top: '15px' }}
-                            />
-                          </Tooltip>
-                        </div>
-                      }
+                      title=""
                       titleAlign={'left'}
-                      info={PayData}
+                      info={PayData.info}
                       colSize={24}
                       midSize={24}
                     ></PayCard>
