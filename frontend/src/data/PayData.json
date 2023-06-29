@@ -330,7 +330,7 @@
   "consolidatedData": [
     {
       "title": "Total Earnings",
-      "value": "1,07,000",
+      "value": "97,000",
       "tagColor": "blue",
       "prefix": "consolidated",
       "breakDown": [
@@ -358,7 +358,7 @@
     },
     {
       "title": "Total Deductions",
-      "value": "33,000",
+      "value": "35,000",
       "tagColor": "warning",
       "prefix": "consolidated",
       "breakDown": [

@@ -257,7 +257,7 @@ export default function Dashboard() {
         </Col>
       </Row>
       <div className="space30"></div>
-      <Row gutter={[24, 24]}>
+      {/*<Row gutter={[24, 24]}>
         <Col
           className="gutter-row"
           xs={{ span: 24 }}
@@ -288,7 +288,7 @@ export default function Dashboard() {
             <RecentTable entity={'quote'} dataTableColumns={dataTableColumns} />
           </div>
         </Col>
-      </Row>
+            </Row>*/}
     </DashboardLayout>
   );
 }

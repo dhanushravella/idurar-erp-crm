@@ -108,15 +108,13 @@ exports.isValidAdminToken = async (req, res, next) => {
         message: "Admin doens't Exist, authorization denied.",
         jwtExpired: true,
       });
-
-    if (admin.isLoggedIn === false)
+    /*if (admin.isLoggedIn === false)
       return res.status(401).json({
         success: false,
         result: null,
         message: 'Admin is already logout try to login, authorization denied.',
         jwtExpired: true,
-      });
-    else {
+      });*/ else {
       req.admin = admin;
       next();
     }
@@ -131,13 +129,13 @@ exports.isValidAdminToken = async (req, res, next) => {
 };
 
 exports.logout = async (req, res) => {
-  const result = await Admin.findOneAndUpdate(
+  /*const result = await Admin.findOneAndUpdate(
     { _id: req.admin._id },
     { isLoggedIn: false },
     {
       new: true,
     }
-  ).exec();
+  ).exec();*/
 
   res.clearCookie('token');
   res.json({ isLoggedOut: true });

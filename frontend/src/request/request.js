@@ -8,7 +8,7 @@ import profanityWords from '@/words.json';
 
 axios.defaults.baseURL = API_BASE_URL;
 // Commented temporarlily for testing the cors issue
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 const request = {
   create: async ({ entity, jsonData }) => {

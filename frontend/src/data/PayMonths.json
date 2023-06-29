@@ -5,7 +5,7 @@
     "payData": [
       {
         "title": "Earnings",
-        "value": "1,00,000",
+        "value": "97,000",
         "tagColor": "green",
         "prefix": "monthly",
         "breakDown": [
@@ -19,7 +19,7 @@
           },
           {
             "title": "Compensatory Allowance",
-            "value": "10,000"
+            "value": "7,000"
           },
           {
             "title": "Education Allowance",

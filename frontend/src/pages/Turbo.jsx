@@ -280,7 +280,7 @@ const ChartData = ({ payItem, title, chartType }) => {
   return <div>{chartType === 'pie' ? <Pie {...chartConfig} /> : <Column {...chartConfig} />}</div>;
 };
 
-const RenderData = ({ data, cmbType, loading }) => {
+const RenderData = ({ data, cmbType, title, loading }) => {
   /* Object Structure
   AvgValue:13444
   CTC:0
@@ -319,7 +319,7 @@ const RenderData = ({ data, cmbType, loading }) => {
         <MuiThemeProvider theme={getMuiTheme()}>
           <MUIDataTable
             loading={loading}
-            title={cmbType === 'payroll' ? 'Payroll Details' : 'Employee List'}
+            title={title}
             data={tableData}
             columns={columns}
             options={muiOptions}
@@ -345,11 +345,11 @@ const Turbo = () => {
     console.log(value);
     setCmbData(value);
     const asyncList = async () => {
-      options = value.value === 'employee' ? (options = {}) : (options = { PayHeadName: 'Basic' });
-      let queryData =
-        value.value === 'employee'
-          ? request.fetch({ entity, options })
-          : request.list({ entity, options });
+      options = { type: value.value };
+      let queryData = request.fetch({ entity, options });
+      //value.value === 'employee'
+      //  ? request.fetch({ entity, options })
+      //  : request.list({ entity, options });
       return queryData;
     };
     asyncList().then((res) => {
@@ -371,7 +371,7 @@ const Turbo = () => {
 
     // Table Data
     const asyncList = async () => {
-      options = cmbData === 'employee' ? (options = {}) : (options = { PayHeadName: 'Basic' });
+      options = { type: 'employee' };
       let queryData = request.fetch({ entity, options });
       return queryData;
     };
@@ -416,6 +416,7 @@ const Turbo = () => {
                       loading={isLoading}
                       data={tabData}
                       cmbType={cmbData.value}
+                      title={cmbData.label}
                     ></RenderData>
                   ),
                 },
